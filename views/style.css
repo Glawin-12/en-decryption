@@ -1,0 +1,79 @@
+.button1 {
+    background-color: #04AA6D;
+    width: 150px;
+    color: white;
+    padding: 14px 20px;
+    margin: 5px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    font-weight: bold;
+    margin-right: 50px;
+}
+
+.button2 {
+    background-color: red;
+    width: 150px;
+    color: white;
+    padding: 14px 20px;
+    margin: 5px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    font-weight: bold;
+    margin-right: 50px;
+}
+
+.button3 {
+    background-color: grey;
+    width: 100px;
+    color: white;
+    padding: 14px 20px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    font-weight: bold;
+    border-radius: 30px;
+    margin-left: 10%;
+}
+
+.button4 {
+    background-color: grey;
+    width: 100px;
+    color: white;
+    padding: 14px 20px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    font-weight: bold;
+    border-radius: 30px;
+    float: right;
+    margin-right: 45%;}
+
+.secretkey {
+    width: 50%;
+    padding: 15px;
+    margin: 10px 0 22px 0;
+    display: inline-block;
+    border: black;
+    font-weight: bold;
+    color: darkblue;
+}
+
+.text1 {
+    position: fixed;
+    right: 0%;
+    margin-right: 2%;
+    justify-content: space-between;
+    font-weight: 400;
+    text-decoration: black;
+}
+
+body{
+    background: black;
+}
+image{
+    margin-left: 2%;
+}
