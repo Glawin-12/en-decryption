@@ -30,16 +30,19 @@ router.post('/encrypt', async (req, res) => {
         }
         else {
             text = text ? text.toString().replace(" ", "+") : "";
+            while(text.indexOf("")>1){
+                text=text.toString().replace("","+");
+            }
             try {
                 let buff = Buffer.from(text, 'base64');
-                let text = buff.toString('ascii');
+                let texts = buff.toString('ascii');
 
                 let keystringBuffer = crypto.createHash('sha256').update(String(key)).digest('hex').substr(0, 32);
                 let ivvBuffer = crypto.createHash('sha256').update(String(secretiv)).digest('hex').substr(0, 16);
 
                 let decipherBuffer = crypto.createDecipheriv(algorithm, keystringBuffer, ivvBuffer)
 
-                let decBuffer = decipherBuffer.update(text, "base64", 'utf8')
+                let decBuffer = decipherBuffer.update(texts, "base64", 'utf8')
                 decBuffer += decipherBuffer.final();
                 res.render('index', {
                     key: key,
@@ -62,7 +65,7 @@ router.post('/encrypt', async (req, res) => {
                             key: key,
                             iv: secretiv,
                             text: text,
-                            encryptedText: JSON.parse(dec)
+                            encryptedText: JSON.parse(...dec)
                         })
                     }
                     catch {
@@ -78,7 +81,8 @@ router.post('/encrypt', async (req, res) => {
                         key: key,
                         iv: secretiv,
                         text: text,
-                        encryptedText: JSON.stringify(text)
+                        encryptedText: JSON.stringify(
+                            text)
                     })
                 }
             }
